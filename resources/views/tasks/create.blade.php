@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@if (Auth::check())
  <h1>Add New Task</h1>
  
  
@@ -26,5 +27,8 @@
                   </div>
     </div>
 <!-- Write content for each page here -->
-
+@else
+ {{print "No Autorization!" }}
+@endif
+    
 @endsection

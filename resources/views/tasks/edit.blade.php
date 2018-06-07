@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+@if (Auth::user()->id == $task->user_id)
  <h1>id: {{ $task->id }} Edit</h1>
 
  <div class="row">
@@ -26,5 +26,8 @@
     </div>
     </div>
 <!-- Write content for each page here -->
-
+@else
+ {{print "No Autorization!" }}
+@endif
+    
 @endsection
